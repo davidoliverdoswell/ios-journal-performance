@@ -9,10 +9,10 @@
 import Foundation
 import CoreData
 
-let baseURL = URL(string: "https://journal-performance.firebaseio.com/")!
+let baseURL = URL(string: "https://journal-performance2.firebaseio.com/")!
 
 class EntryController {
-        
+    
     func createEntry(with title: String, bodyText: String, mood: String) {
         
         let entry = Entry(title: title, bodyText: bodyText, mood: mood)
@@ -91,6 +91,8 @@ class EntryController {
     }
     
     func fetchEntriesFromServer(completion: @escaping (([EntryRepresentation]?, Error?) -> Void) = { _,_ in }) {
+        
+        
         
         let requestURL = baseURL.appendingPathExtension("json")
         
